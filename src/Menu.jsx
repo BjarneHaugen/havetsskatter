@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import menuData from './menu.json';
+import './Menu.css'; // Import the CSS file
 
 const MenuSection = ({ title, items }) => (
     <section>
         <h2>{title}</h2>
         {items.map((item, index) => (
-            <article key={index}>
+            <article key={index} className="menu-item">
                 <h3>{item.name}</h3>
                 <p><strong>Beskrivelse:</strong> {item.description}</p>
                 <p><strong>Pris:</strong> {item.price}</p>
@@ -24,7 +25,7 @@ const Menu = () => {
     }, []);
 
     return (
-        <main>
+        <div>
             <header>
                 <h1>Menu</h1>
                 <nav>
@@ -41,7 +42,7 @@ const Menu = () => {
             <footer>
                 <p>&copy; 2023 Havetsskatter. All rights reserved.</p>
             </footer>
-        </main>
+        </div>
     );
 };
 

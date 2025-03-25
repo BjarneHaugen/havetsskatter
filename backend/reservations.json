@@ -1,14 +1,16 @@
 [
   {
-    "table": "T3",
-    "date": "2025-03-27",
-    "time": "19:00",
-    "endTime": "21:00"
+    "table": "B7",
+    "date": "2025-03-25",
+    "time": "20:00",
+    "endTime": "22:00",
+    "name": "Bjarne Haugen"
   },
   {
-    "table": "T3",
-    "date": "2025-03-27",
-    "time": "19:00",
-    "endTime": "21:00"
+    "table": "B7",
+    "date": "2025-03-25",
+    "time": "20:00",
+    "endTime": "22:00",
+    "name": "Bjarne Haugen"
   }
 ]

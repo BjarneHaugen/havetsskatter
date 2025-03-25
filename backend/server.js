@@ -16,38 +16,28 @@ app.use(cors(corsOptions));
 
 app.post('/reserve', (req, res) => {
     const reservation = req.body;
-    console.log('Received reservation:', reservation);
-
-    // Read the existing reservations from the JSON file
     fs.readFile('reservations.json', 'utf8', (err, data) => {
         if (err) {
-            console.error('Error reading reservations.json:', err);
             return res.status(500).send('Server error: Error reading reservations.json');
         }
-
-        let reservations;
-        try {
-            reservations = data ? JSON.parse(data) : [];
-        } catch (parseError) {
-            console.error('Error parsing reservations.json:', parseError);
-            return res.status(500).send('Server error: Error parsing reservations.json');
-        }
-
-        console.log('Current reservations:', reservations);
-
-        // Add the new reservation to the list
+        let reservations = data ? JSON.parse(data) : [];
         reservations.push(reservation);
-
-        // Save the updated reservations back to the JSON file
         fs.writeFile('reservations.json', JSON.stringify(reservations, null, 2), (err) => {
             if (err) {
-                console.error('Error writing to reservations.json:', err);
                 return res.status(500).send('Server error: Error writing to reservations.json');
             }
-
-            console.log('Reservation saved successfully');
             res.status(200).send('Reservation saved');
         });
+    });
+});
+
+app.get('/reservations', (req, res) => {
+    fs.readFile('reservations.json', 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).send('Server error: Error reading reservations.json');
+        }
+        let reservations = data ? JSON.parse(data) : [];
+        res.status(200).json(reservations);
     });
 });
 
