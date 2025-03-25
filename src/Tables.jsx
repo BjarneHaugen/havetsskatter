@@ -20,6 +20,8 @@ const Tables = () => {
             endTime: calculateEndTime(time),
         };
 
+        console.log('Sending reservation:', reservation);
+
         try {
             const response = await fetch('http://localhost:5000/reserve', {
                 method: 'POST',
@@ -28,6 +30,8 @@ const Tables = () => {
                 },
                 body: JSON.stringify(reservation),
             });
+
+            console.log('Response:', response);
 
             if (response.ok) {
                 alert(`Table ${selectedTable} reserved for ${date} from ${time} to ${calculateEndTime(time)}`);
