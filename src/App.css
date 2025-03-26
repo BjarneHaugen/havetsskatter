@@ -3,15 +3,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 header {
     background-color: #20059b;
     color: white;
-    padding: 1%;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     top: 0;
+    margin: 0;
 }
 
 nav ul {
@@ -31,7 +33,7 @@ nav ul li a {
 
 main {
     padding: 2rem;
-    padding-top: 4rem; /* Add padding to account for the fixed header height */
+    padding-top: 4rem;
 }
 
 section {
