@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home.jsx';
-import Menu from './Menu.jsx';
+import Menu from './menu.jsx';
 import Tables from './Tables.jsx';
 
 function App() {

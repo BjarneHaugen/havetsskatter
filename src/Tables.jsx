@@ -24,12 +24,17 @@ const Tables = () => {
     }, []);
 
     const isTableBusy = (table) => {
-        return reservations.some(reservation => 
-            reservation.table === table && 
-            reservation.date === date && 
-            reservation.time <= time && 
-            reservation.endTime > time
-        );
+        return reservations.some(reservation => {
+            const reservationStart = new Date(`1970-01-01T${reservation.startTime}:00`);
+            const reservationEnd = new Date(`1970-01-01T${reservation.endTime}:00`);
+            const selectedTime = new Date(`1970-01-01T${time}:00`);
+            return (
+                reservation.table === table &&
+                reservation.date === date &&
+                reservationStart <= selectedTime &&
+                reservationEnd > selectedTime
+            );
+        });
     };
 
     const handleTableClick = (table) => {
@@ -46,8 +51,9 @@ const Tables = () => {
             table: selectedTable,
             date,
             time,
-            endTime: calculateEndTime(time),
-            name, 
+            startTime: calculateStartTime(time), // Lock 1.5 hours before
+            endTime: calculateEndTime(time), // Lock 2 hours after
+            name,
         };
 
         console.log('Sending reservation:', reservation);
@@ -64,7 +70,7 @@ const Tables = () => {
             console.log('Response:', response);
 
             if (response.ok) {
-                alert(`Table ${selectedTable} reserved for ${date} from ${time} to ${calculateEndTime(time)}`);
+                alert(`Table ${selectedTable} reserved for ${date} from ${calculateStartTime(time)} to ${calculateEndTime(time)}`);
                 setReservations([...reservations, reservation]);
             } else {
                 alert('Failed to save reservation');
@@ -75,8 +81,16 @@ const Tables = () => {
         }
     };
 
-    const calculateEndTime = (startTime) => {
-        const [hours, minutes] = startTime.split(':');
+    const calculateStartTime = (time) => {
+        const [hours, minutes] = time.split(':');
+        const startTime = new Date();
+        startTime.setHours(parseInt(hours) - 1);
+        startTime.setMinutes(parseInt(minutes) - 30);
+        return startTime.toTimeString().slice(0, 5);
+    };
+
+    const calculateEndTime = (time) => {
+        const [hours, minutes] = time.split(':');
         const endTime = new Date();
         endTime.setHours(parseInt(hours) + 2);
         endTime.setMinutes(parseInt(minutes));
