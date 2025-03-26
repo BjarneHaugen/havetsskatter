@@ -123,26 +123,34 @@ const Tables = () => {
                 <section>
                     <h2>Plassering av bord</h2>
                     <div className="table-layout">
-                        <div className="row">
-                            <div className={`table ${selectedTable === 'B1' ? 'selected' : ''} ${isTableBusy('B1') ? 'busy' : ''}`} onClick={() => handleTableClick('B1')}>B1</div>
-                            <div className={`table ${selectedTable === 'B2' ? 'selected' : ''} ${isTableBusy('B2') ? 'busy' : ''}`} onClick={() => handleTableClick('B2')}>B2</div>
-                            <div className={`table ${selectedTable === 'B3' ? 'selected' : ''} ${isTableBusy('B3') ? 'busy' : ''}`} onClick={() => handleTableClick('B3')}>B3</div>
-                        </div>
-                        <div className="row">
-                            <div className={`table ${selectedTable === 'B4' ? 'selected' : ''} ${isTableBusy('B4') ? 'busy' : ''}`} onClick={() => handleTableClick('B4')}>B4</div>
-                            <div className={`table ${selectedTable === 'B5' ? 'selected' : ''} ${isTableBusy('B5') ? 'busy' : ''}`} onClick={() => handleTableClick('B5')}>B5</div>
-                            <div className={`table ${selectedTable === 'B6' ? 'selected' : ''} ${isTableBusy('B6') ? 'busy' : ''}`} onClick={() => handleTableClick('B6')}>B6</div>
-                        </div>
-                        <div className="row">
-                            <div className={`table ${selectedTable === 'T1' ? 'selected' : ''} ${isTableBusy('T1') ? 'busy' : ''}`} onClick={() => handleTableClick('T1')}>T1</div>
-                            <div className={`table ${selectedTable === 'T2' ? 'selected' : ''} ${isTableBusy('T2') ? 'busy' : ''}`} onClick={() => handleTableClick('T2')}>T2</div>
-                            <div className={`table ${selectedTable === 'T3' ? 'selected' : ''} ${isTableBusy('T3') ? 'busy' : ''}`} onClick={() => handleTableClick('T3')}>T3</div>
-                            <div className={`table ${selectedTable === 'T4' ? 'selected' : ''} ${isTableBusy('T4') ? 'busy' : ''}`} onClick={() => handleTableClick('T4')}>T4</div>
-                            <div className={`table ${selectedTable === 'T5' ? 'selected' : ''} ${isTableBusy('T5') ? 'busy' : ''}`} onClick={() => handleTableClick('T5')}>T5</div>
-                        </div>
-                        <div className="row">
-                            <div className={`table large ${selectedTable === 'B7' ? 'selected' : ''} ${isTableBusy('B7') ? 'busy' : ''}`} onClick={() => handleTableClick('B7')}>B7</div>
-                        </div>
+                        {/* Row 1: B1, B2, B3 */}
+                        <div className={`table four-seater ${selectedTable === 'B1' ? 'selected' : ''} ${isTableBusy('B1') ? 'busy' : ''}`} onClick={() => handleTableClick('B1')}>B1</div>
+                        <div></div>
+                        <div className={`table four-seater ${selectedTable === 'B2' ? 'selected' : ''} ${isTableBusy('B2') ? 'busy' : ''}`} onClick={() => handleTableClick('B2')}>B2</div>
+                        <div></div>
+                        <div className={`table four-seater ${selectedTable === 'B3' ? 'selected' : ''} ${isTableBusy('B3') ? 'busy' : ''}`} onClick={() => handleTableClick('B3')}>B3</div>
+
+                        {/* Row 2: B4, B5, B6 */}
+                        <div className={`table four-seater ${selectedTable === 'B4' ? 'selected' : ''} ${isTableBusy('B4') ? 'busy' : ''}`} onClick={() => handleTableClick('B4')}>B4</div>
+                        <div></div>  
+                        <div className={`table four-seater ${selectedTable === 'B5' ? 'selected' : ''} ${isTableBusy('B5') ? 'busy' : ''}`} onClick={() => handleTableClick('B5')}>B5</div>
+                        <div></div>
+
+                        <div className={`table four-seater ${selectedTable === 'B6' ? 'selected' : ''} ${isTableBusy('B6') ? 'busy' : ''}`} onClick={() => handleTableClick('B6')}>B6</div>
+
+                        {/* Row 3: T1, T2, T3, T4, T5 */}
+                        <div className={`table two-seater ${selectedTable === 'T1' ? 'selected' : ''} ${isTableBusy('T1') ? 'busy' : ''}`} onClick={() => handleTableClick('T1')}>T1</div>
+                        <div className={`table two-seater ${selectedTable === 'T2' ? 'selected' : ''} ${isTableBusy('T2') ? 'busy' : ''}`} onClick={() => handleTableClick('T2')}>T2</div>
+                        <div className={`table two-seater ${selectedTable === 'T3' ? 'selected' : ''} ${isTableBusy('T3') ? 'busy' : ''}`} onClick={() => handleTableClick('T3')}>T3</div>
+                        <div className={`table two-seater ${selectedTable === 'T4' ? 'selected' : ''} ${isTableBusy('T4') ? 'busy' : ''}`} onClick={() => handleTableClick('T4')}>T4</div>
+                        <div className={`table two-seater ${selectedTable === 'T5' ? 'selected' : ''} ${isTableBusy('T5') ? 'busy' : ''}`} onClick={() => handleTableClick('T5')}>T5</div>
+
+                        {/* Row 4: B7 */}
+                        <div></div>
+                        <div></div>
+                        <div className={`table large ${selectedTable === 'B7' ? 'selected' : ''} ${isTableBusy('B7') ? 'busy' : ''}`} onClick={() => handleTableClick('B7')}>B7</div>
+                        <div></div>
+                        <div></div>
                     </div>
                     <ul className="table-description">
                         <li><strong>B1, B2, B3:</strong> Fireseter langs vinduet.</li>

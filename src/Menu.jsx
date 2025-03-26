@@ -20,10 +20,38 @@ const MenuSection = ({ title, items }) => (
 
 const Menu = () => {
     const [menu, setMenu] = useState({});
+    const [selectedCategory, setSelectedCategory] = useState('forretter');
+    const [allergenFilters, setAllergenFilters] = useState([]);
 
     useEffect(() => {
         setMenu(menuData);
     }, []);
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
+    };
+
+    const handleAllergenFilterChange = (allergen) => {
+        setAllergenFilters((prevFilters) =>
+            prevFilters.includes(allergen)
+                ? prevFilters.filter((filter) => filter !== allergen)
+                : [...prevFilters, allergen]
+        );
+    };
+
+    const filteredItems = menu[selectedCategory]?.filter((item) =>
+        allergenFilters.every((filter) => !item.allergens.includes(filter))
+    );
+
+    const allergens = [
+        'Bløtdyr',
+        'Melk',
+        'Hvete (gluten)',
+        'Fisk',
+        'Skalldyr',
+        'Egg',
+        'Sennep',
+    ];
 
     return (
         <div>
@@ -37,9 +65,27 @@ const Menu = () => {
                     </ul>
                 </nav>
             </header>
-            {menu.forretter && <MenuSection title="Forretter" items={menu.forretter} />}
-            {menu.hovedretter && <MenuSection title="Hovedretter" items={menu.hovedretter} />}
-            {menu.desserter && <MenuSection title="Desserter" items={menu.desserter} />}
+            <div className="menu-controls">
+                <div className="category-selector">
+                    <button onClick={() => handleCategoryChange('forretter')} className={selectedCategory === 'forretter' ? 'active' : ''}>Forretter</button>
+                    <button onClick={() => handleCategoryChange('hovedretter')} className={selectedCategory === 'hovedretter' ? 'active' : ''}>Hovedretter</button>
+                    <button onClick={() => handleCategoryChange('desserter')} className={selectedCategory === 'desserter' ? 'active' : ''}>Desserter</button>
+                </div>
+                <p>Allergener:</p>
+                <div className="allergen-filters">
+                    {allergens.map((allergen) => (
+                        <label key={allergen}>
+                            <input
+                                type="checkbox"
+                                value={allergen}
+                                onChange={() => handleAllergenFilterChange(allergen)}
+                            />
+                            {allergen}
+                        </label>
+                    ))}
+                </div>
+            </div>
+            {filteredItems && <MenuSection title={selectedCategory} items={filteredItems} />}
             <footer>
                 <p>&copy; 2023 Havetsskatter. All rights reserved.</p>
             </footer>

@@ -17,3 +17,42 @@ section {
     margin-bottom: 1rem;
     border-radius: 8px;
 }
+
+.menu-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.category-selector {
+    margin-bottom: 1rem;
+}
+
+.category-selector button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #236681;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.category-selector button.active {
+    background-color: #1a4d5e;
+}
+
+.allergen-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.allergen-filters label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
