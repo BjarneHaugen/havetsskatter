@@ -4,19 +4,22 @@
             "name": "Blåskjell i hvitvinssaus",
             "description": "Dampede blåskjell i en kremet hvitvinssaus, servert med ferskt brød.",
             "price": "129 kr",
-            "allergens": "Bløtdyr, melk, hvete (gluten)"
+            "allergens": "Bløtdyr, melk, hvete (gluten)",
+            "image": "/images/forretter/blaskjell.jpg"
         },
         {
             "name": "Røkt laks på rugbrød",
             "description": "Fersk røkt laks på sprøtt rugbrød, servert med dill, sitron og kapers.",
             "price": "115 kr",
-            "allergens": "Fisk, hvete (gluten)"
+            "allergens": "Fisk, hvete (gluten)",
+            "image": "/images/forretter/rokt_laks.jpg"
         },
         {
             "name": "Scampi med hvitløk og chili",
             "description": "Grillet scampi i en blanding av hvitløk og chili, servert med lime og koriander.",
             "price": "139 kr",
-            "allergens": "Skalldyr"
+            "allergens": "Skalldyr",
+            "image": "/images/forretter/scampi.jpg"
         }
     ],
     "hovedretter": [
@@ -24,25 +27,29 @@
             "name": "Grillet laks med urtesmør",
             "description": "Saftig grillet laks servert med potetpuré, asparges og en smørsaus med friske urter.",
             "price": "245 kr",
-            "allergens": "Fisk, melk"
+            "allergens": "Fisk, melk",
+            "image": "/images/hovedretter/grillet_laks.jpg"
         },
         {
             "name": "Hummer Thermidor",
             "description": "Gratinerte hummerhaler med en kremet sopp- og sennepssaus, servert med grønnsaker og ris.",
             "price": "379 kr",
-            "allergens": "Skalldyr, melk, egg, sennep"
+            "allergens": "Skalldyr, melk, egg, sennep",
+            "image": "/images/hovedretter/hummer_thermidor.jpg"
         },
         {
-            "name": "Stekt torsk med ertepuré",
+            "name": "   ",
             "description": "Panert torsk servert med smørdampede grønnsaker, ertepuré og mandelpoteter.",
             "price": "265 kr",
-            "allergens": "Fisk, melk, hvete (gluten)"
+            "allergens": "Fisk, melk, hvete (gluten)",
+            "image": "/images/hovedretter/stekt_torsk.jpg"
         },
         {
             "name": "Fiskesuppe med safran",
             "description": "Kremet fiskesuppe med fersk torsk, laks, blåskjell og safran, servert med brød.",
             "price": "210 kr",
-            "allergens": "Fisk, melk, bløtdyr, hvete (gluten)"
+            "allergens": "Fisk, melk, bløtdyr, hvete (gluten)",
+            "image": "/images/hovedretter/fiskesuppe.jpg"
         }
     ],
     "desserter": [
@@ -50,19 +57,22 @@
             "name": "Sitronterte med marengs",
             "description": "Syrlig sitronterte med sprø bunn og fløyelsmyk marengs.",
             "price": "95 kr",
-            "allergens": "Egg, hvete (gluten), melk"
+            "allergens": "Egg, hvete (gluten), melk",
+            "image": "/images/desserter/sitronterte.jpg"
         },
         {
             "name": "Sjokolademousse med havsalt",
             "description": "Fyldig sjokolademousse toppet med et hint av havsalt og friske bær.",
             "price": "105 kr",
-            "allergens": "Melk, egg"
+            "allergens": "Melk, egg",
+            "image": "/images/desserter/sjokolademousse.jpg"
         },
         {
             "name": "Crème Brûlée med vanilje",
             "description": "Klassisk crème brûlée med en knasende karamellisert topp og ekte vaniljesmak.",
             "price": "115 kr",
-            "allergens": "Egg, melk"
+            "allergens": "Egg, melk",
+            "image": "/images/desserter/creme_brulee.jpg"
         }
     ]
 }

@@ -9,6 +9,7 @@ const MenuSection = ({ title, items }) => (
         {items.map((item, index) => (
             <article key={index} className="menu-item">
                 <h3>{item.name}</h3>
+                <img src={item.image} alt={item.name} className="menu-item-image" />
                 <p><strong>Beskrivelse:</strong> {item.description}</p>
                 <p><strong>Pris:</strong> {item.price}</p>
                 <p><strong>Allergener:</strong> {item.allergens}</p>
